@@ -35,9 +35,6 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "npm run lint",
-      "npm run prettier",
-      "git add"
-    ]
+      "prettier --write", "git add"]
   }
 }

@@ -10,9 +10,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "axios": "^0.26.0",
+    "pinia": "^2.0.11",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@types/node": "^17.0.16",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
     "@vitejs/plugin-vue": "^2.0.0",
@@ -20,6 +24,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.4.1",
+    "less": "^4.1.2",
+    "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^2.5.1",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
@@ -33,8 +39,7 @@
   "lint-staged": {
     "*.{ts,tsx,vue,js,jsx}": [
       "yarn lint",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }

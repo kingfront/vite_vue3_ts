@@ -5,7 +5,6 @@ import axios, { AxiosRequestConfig } from 'axios'
 
 // 创建 axios 实例
 const request = axios.create({
-  // API 请求的默认前缀
   timeout: 10000 // 请求超时时间
 })
 
@@ -33,7 +32,7 @@ request.interceptors.request.use((config) => {
 
 // response interceptor
 request.interceptors.response.use((response) => {
-  return response.data
+  return response
 }, errorHandler)
 
 export default request

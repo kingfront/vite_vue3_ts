@@ -1,28 +1,22 @@
 import { reactive, toRefs } from 'vue'
 import { fetchRandMusic } from '@/api/service'
-import { Music } from '@/model/ComModel'
+import { HomeHooksModel } from '@/model/HomeModel'
 
+// 首页hooks模块
 export const HomeHooks = () => {
-  interface HomeType {
-    loading: boolean
-    musicData: Music
-  }
-  const indexRec = reactive<HomeType>({
+  // 响应值定义
+  const indexRec = reactive<HomeHooksModel>({
     loading: true,
-    musicData: {
-      name: '',
-      picurl: '',
-      artistsname: '',
-      url: ''
-    }
+    noData: false,
+    musicData: {}
   })
 
-  // 查询音乐信息
+  // 查询随机音乐信息
   const fetchMusicInfo = async () => {
     const { data } = await fetchRandMusic()
     indexRec.loading = false
-    indexRec.musicData = data
+    indexRec.noData = data.code !== 1
+    indexRec.musicData = data.data
   }
-
   return { ...toRefs(indexRec), fetchMusicInfo }
 }

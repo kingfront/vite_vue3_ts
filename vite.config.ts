@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import styleImport, { VantResolve } from 'vite-plugin-style-import'
 
-// https://vitejs.dev/config/
+// 配置参考： https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    styleImport({
+      resolves: [VantResolve()]
+    })
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
@@ -13,8 +19,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        charset: false
-        // additionalData: '@import "./src/style/global.less";'
+        charset: false,
+        additionalData: '@import "./src/style/global.less";' // 加载全局样式，使用less特性
       }
     }
   },

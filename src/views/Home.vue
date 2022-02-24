@@ -42,7 +42,8 @@ watch(
 </script>
 <style lang="less" scoped>
 .home-main {
-  margin-top: 100px;
+  padding-top: 100px;
+  background: linear-gradient(180deg, @theme-color, rgba(0, 0, 0, 0));
   .retry-button {
     background: #fff;
     color: @theme-color;

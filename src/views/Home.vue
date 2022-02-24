@@ -1,6 +1,6 @@
 <template>
   <div class="home-main">
-    <component :is="LoadingTag"></component>
+    <component :is="loading && LoadingTag"></component>
     <component :is="!loading && MusicCard" :data="musicData"></component>
     <van-empty v-if="noData" image="error" description="没有获取到数据哦">
       <van-button round class="retry-button" @click="retryData">点击重试</van-button>

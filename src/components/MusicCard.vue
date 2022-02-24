@@ -34,6 +34,7 @@ watch(props, () => {
 <template>
   <div class="music-card">
     <div class="player" @click="clickPoster()">
+      <div class="lead-icon" :class="{ 'lead-active': playing }"></div>
       <div class="rotate-block" :class="{ start: startAudio, active: playing, pause: !playing }">
         <img :src="data.picurl" />
       </div>
@@ -76,7 +77,7 @@ watch(props, () => {
       align-items: center;
       background: url('@/images/audio-bg.png') no-repeat;
       background-size: contain;
-
+      position: relative;
       &:before {
         content: ' ';
         top: 0;
@@ -88,6 +89,7 @@ watch(props, () => {
         background: url('@/images/audio-bg-light.png') no-repeat;
         background-size: contain;
       }
+
       img {
         width: 250px;
         height: 250px;
@@ -103,6 +105,22 @@ watch(props, () => {
       z-index: 15;
       background: url('@/images/pause.png') no-repeat;
       background-size: contain;
+    }
+    .lead-active {
+      transform: rotate(-7deg) !important;
+    }
+    .lead-icon {
+      position: absolute;
+      width: 120px;
+      height: 193px;
+      top: -60px;
+      right: 250px;
+      transition: 1s;
+      transform: rotate(-30deg);
+      transform-origin: left top;
+      background: url('@/images/needle.png') no-repeat;
+      background-size: contain;
+      z-index: 20;
     }
   }
   .title {

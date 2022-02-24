@@ -13,6 +13,10 @@ const emit = defineEmits<{
 // 定义 HTMLAudioElement 响应对象
 const audio = ref<HTMLAudioElement>(new Audio())
 onMounted(() => {
+  // 监听视频是否能播放
+  audio.value.oncanplay = () => {
+    props.playing ? audio.value.play() : false
+  }
   // 开始播放
   audio.value.onplay = () => {
     emit('onAudioState', 1) // 通知父组件
@@ -23,7 +27,6 @@ onMounted(() => {
   }
   // 播放失败
   audio.value.onerror = (err) => {
-    console.error(err)
     emit('onAudioState', -1) // 通知父组件
   }
 })

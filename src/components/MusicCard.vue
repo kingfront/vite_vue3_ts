@@ -26,7 +26,9 @@ const onAudioState = (audioState: number) => {
 }
 
 // 监听刷新音乐后，停止播放状态
-watch(props, () => (playing.value = false))
+watch(props, () => {
+  playing.value = true
+})
 </script>
 
 <template>

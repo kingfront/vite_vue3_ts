@@ -1,23 +1,19 @@
-import axios, { AxiosRequestConfig } from 'axios'
+import axios from 'axios'
+import { CT } from '@/config/config'
+import { Toast } from 'vant'
 
 // axios.defaults.headers.common['Content-Type'] = 'application/json'
 // axios.defaults.headers.common['area-code'] = 'CWHT'
-
 // 创建 axios 实例
 const request = axios.create({
-  timeout: 10000 // 请求超时时间
+  timeout: CT.timeout // 请求超时时间
 })
 
 // 异常拦截处理器
 const errorHandler = (error: any) => {
   if (error.response) {
     const data = error.response.data
-    if (error.response.status === 403) {
-      console.error('Forbidden', data.message)
-    }
-    if (error.response.status === 401 && !(data.result && data.result.isLogin)) {
-      console.error('Unauthorized', 'Authorization verification failed')
-    }
+    Toast(data.message)
   }
   return Promise.reject(error)
 }

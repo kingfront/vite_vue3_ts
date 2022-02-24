@@ -16,6 +16,7 @@ const clickRefresh = () => {
   }
 }
 
+// 控制动画
 const makeRound = (): boolean => {
   if (!rolling.value) {
     rolling.value = true

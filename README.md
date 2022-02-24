@@ -27,5 +27,5 @@ export default defineConfig({
    在 env.d.ts 文件中，声明没有类型的库导入为 any
 
 ```js
-declare module '*';
+declare module '*.jsx';
 ```

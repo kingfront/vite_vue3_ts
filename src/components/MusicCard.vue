@@ -6,8 +6,8 @@
 import { MusicModel } from '@/model/HomeModel'
 import AudioDeal from '@/components/AudioDeal.vue'
 import { Toast } from 'vant'
-import { ref } from 'vue'
-defineProps<{ data: MusicModel }>()
+import { ref, watch } from 'vue'
+const props = defineProps<{ data: MusicModel }>()
 
 const playing = ref(false)
 const startAudio = ref(false)
@@ -24,6 +24,9 @@ const onAudioState = (audioState: number) => {
   playing.value = audioState === 1 ? true : false
   audioState === -1 ? Toast('播放链接不存在！') : ''
 }
+
+// 监听刷新音乐后，停止播放状态
+watch(props, () => (playing.value = false))
 </script>
 
 <template>

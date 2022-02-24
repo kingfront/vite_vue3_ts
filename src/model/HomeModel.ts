@@ -1,6 +1,6 @@
 // music对象约束
 export interface MusicModel {
-  name?: string
+  name: string
   artistsname?: string
   picurl?: string
   url?: string

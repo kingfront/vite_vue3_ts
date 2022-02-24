@@ -1,3 +1,8 @@
+/**
+  add by xx
+  首页hooks封装，也就是响应式代码块
+ */
+
 import { reactive, toRefs } from 'vue'
 import { fetchRandMusic } from '@/api/service'
 import { HomeHooksModel } from '@/model/HomeModel'

@@ -6,3 +6,6 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+// 不关心外部库的类型，并且希望将所有没有类型的库导入为any
+declare module '*.jsx'

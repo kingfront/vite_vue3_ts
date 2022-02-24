@@ -1,19 +1,34 @@
+<!--
+  add by xx
+  音乐展示组件
+-->
 <script setup lang="ts">
 import { MusicModel } from '@/model/HomeModel'
+import AudioDeal from '@/components/AudioDeal.vue'
+import { Toast } from 'vant'
 import { ref } from 'vue'
 defineProps<{ data: MusicModel }>()
+
 const playing = ref(false)
 const startAudio = ref(false)
 
-const clickAudio = () => {
+// 点击海报区域
+const clickPoster = () => {
   startAudio.value = true
   playing.value = !playing.value
+}
+
+// 监听音乐状态
+const onAudioState = (audioState: number) => {
+  startAudio.value = true
+  playing.value = audioState === 1 ? true : false
+  audioState === -1 ? Toast('播放链接不存在！') : ''
 }
 </script>
 
 <template>
   <div class="music-card">
-    <div class="player" @click="clickAudio">
+    <div class="player" @click="clickPoster()">
       <div class="rotate-block" :class="{ start: startAudio, active: playing, pause: !playing }">
         <img :src="data.picurl" />
       </div>
@@ -21,6 +36,13 @@ const clickAudio = () => {
     </div>
     <div class="title">{{ data.name }}</div>
     <div class="author">{{ data.artistsname }}</div>
+
+    <component
+      :is="data.url && AudioDeal"
+      :url="data.url"
+      :playing="playing"
+      @on-audio-state="onAudioState"
+    ></component>
   </div>
 </template>
 
@@ -88,6 +110,7 @@ const clickAudio = () => {
     font-size: 25px;
     color: #818894;
     margin-top: 20px;
+    margin-bottom: 100px;
   }
 }
 @keyframes player-rotate {

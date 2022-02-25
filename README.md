@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-🔥 <a href="https://vite-vue3-ts.vercel.app/">Demo 访问</a>
+🔥 <a href="https://freely.vercel.app/">Demo 访问</a>
 &nbsp;
 🌈 <a href="https://youzan.github.io/vant">掘金博客</a>
 </p>

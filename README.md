@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" height="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://freely.vercel.app/favicon.ico" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 <h1 align="center">手机端简易示例《随机热门音乐》</h1>
 

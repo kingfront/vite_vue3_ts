@@ -18,7 +18,37 @@
 🌈 <a href="https://youzan.github.io/vant">掘金博客</a>
 </p>
 
-## 配置支持 jsx
+---
+
+## 依赖
+
+- 🚀 vue3.2 + vite + typescript + pinia + axios + vant
+- 💪 使用 vue3.2 `<script setup>` 语法糖
+- 💪 使用 TypeScript
+- 🍭 支持 jsx 组件写法
+- 🍭 整合 vant ui、less
+- 🍭 使用 viewport 移动端方案
+- 🍭 使用 pinia 替代 vuex，更简单、更高效
+- 🍭 使用 `网易云音乐` 热门歌曲接口为数据源
+
+## 启动、部署
+
+Using `npm` to :
+
+````bash
+  # 安装依赖
+  npm install
+
+  # 本地启动
+  npm run dev
+
+  # 本地打包
+  npm run build
+
+```bash
+````
+
+### 配置支持 jsx
 
 1. 安装依赖
 

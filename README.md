@@ -30,20 +30,21 @@
 - 🍭 使用 viewport 移动端方案
 - 🍭 使用 pinia 替代 vuex，更简单、更高效
 - 🍭 使用 `网易云音乐` 热门歌曲接口为数据源
+- 🍭 支持 husky + lint-staged 代码提交规范
 
 ## 启动、部署
 
-Using `npm` to :
+Using `yarn` to :
 
 ````bash
   # 安装依赖
-  npm install
+  yarn
 
   # 本地启动
-  npm run dev
+  yarn dev
 
   # 本地打包
-  npm run build
+  yarn build
 
 ```bash
 ````
